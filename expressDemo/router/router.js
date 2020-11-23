@@ -20,6 +20,13 @@ const router = (app) => {
         res.send(req.params)
     })
 
+    // post 请求
+    app.post('/post/test', (request, response) => {
+        console.log(request.body)
+        log(request.body.color)
+        response.send('收到了')
+    })
+
     // 使用app.route 来指定路由
     app.route('/book')
         .get(function (req, res) {
